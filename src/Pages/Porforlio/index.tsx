@@ -181,7 +181,7 @@ export const Portfolio = () => {
     };
 
     getPlans();
-  }, [filterOptions.page, filterOptions.limit]);
+  }, [filterOptions, filterOptions.page, filterOptions.limit]);
 
   return (
     <div className="portfolio">

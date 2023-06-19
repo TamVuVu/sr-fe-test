@@ -19,7 +19,6 @@ export const StepDrawer = ({
   isOpenDrawer,
   ...props
 }: StepDrawerPropsType) => {
-  // const [isOpenDrawer, setIsOpenDrawer] = useState<boolean>(false);
   const [current, setCurrent] = useState(0);
   const handleNext = (values: any) => {
     if (current === 0) {
@@ -107,8 +106,8 @@ export const StepDrawer = ({
           take_profit: take_profit,
           stop_loss: stop_loss,
         };
-        const res = await apiCreatePlan("/api/v1/plan", payload);
-        console.log(res);
+        await apiCreatePlan("/api/v1/plan", payload);
+        message.success("Create Plan Successfully");
         setSubmitting(false);
         onCloseDrawer();
       }}
