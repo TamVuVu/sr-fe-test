@@ -3,8 +3,7 @@ import { Navigate, Outlet, useNavigate } from "react-router-dom";
 import ConfigProvider from "./Contexts/ConfigContext";
 import Layout from "antd/es/layout/layout";
 import { NavBar } from "./Components";
-import { Login } from "./Pages";
-import { Avatar, Dropdown } from "antd";
+import { Dropdown } from "antd";
 export const LoadingContext = createContext({
   isLoading: false,
   setIsLoading: (loadingState: boolean) => {},

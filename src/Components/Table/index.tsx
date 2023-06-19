@@ -1,26 +1,7 @@
-import {
-  Card,
-  Image,
-  Menu,
-  TableProps,
-  Table as AntdTable,
-  TablePaginationConfig,
-} from "antd";
-import { Link, useNavigate } from "react-router-dom";
-import { IMovie } from "../../types";
-import { fallbackImage } from "../../constant";
+import React from "react";
+import { TableProps, Table as AntdTable } from "antd";
 
 import "./index.scss";
-import Sider from "antd/es/layout/Sider";
-import React, { ReactNode } from "react";
-import {
-  UploadOutlined,
-  UserOutlined,
-  VideoCameraOutlined,
-  HomeOutlined,
-  LineChartOutlined,
-} from "@ant-design/icons";
-import { ColumnsType } from "antd/es/table";
 
 export interface DataType {
   key: React.Key;

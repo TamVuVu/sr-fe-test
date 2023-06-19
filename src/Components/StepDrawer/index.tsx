@@ -1,16 +1,5 @@
-import {
-  Card,
-  Drawer,
-  DrawerProps,
-  Image,
-  Input,
-  Select,
-  Typography,
-  message,
-} from "antd";
+import { Drawer, DrawerProps, Input, Typography, message } from "antd";
 import { useNavigate } from "react-router-dom";
-import { IMovie } from "../../types";
-import { USER_INFO, VALID_USER, fallbackImage } from "../../constant";
 
 import "./index.scss";
 import { Field, Formik } from "formik";

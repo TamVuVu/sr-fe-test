@@ -1,4 +1,4 @@
-import { Spin, Button as AntdButton, ButtonProps } from "antd";
+import { Button as AntdButton, ButtonProps } from "antd";
 import "./index.scss";
 import { ReactNode } from "react";
 

@@ -1,7 +1,6 @@
-import { Card, Image, Input, message } from "antd";
+import { Input, message } from "antd";
 import { useNavigate } from "react-router-dom";
-import { IMovie } from "../../types";
-import { USER_INFO, VALID_USER, fallbackImage } from "../../constant";
+import { USER_INFO, VALID_USER } from "../../constant";
 
 import "./index.scss";
 import { Formik } from "formik";
@@ -11,7 +10,6 @@ type FormPropsType = {
   className?: string;
   onSubmit: () => any;
 };
-const { Meta } = Card;
 
 export const LoginForm = ({ onSubmit, className }: FormPropsType) => {
   const navigate = useNavigate();
