@@ -106,8 +106,12 @@ export const StepDrawer = ({
           take_profit: take_profit,
           stop_loss: stop_loss,
         };
-        await apiCreatePlan("/api/v1/plan", payload);
-        message.success("Create Plan Successfully");
+        const plan = await apiCreatePlan("/api/v1/plan", payload);
+        if (plan?.Response === "False") {
+          message.error(plan.Error);
+        } else {
+          message.success("Created Plan Successfully");
+        }
         setSubmitting(false);
         onCloseDrawer();
       }}
