@@ -1,0 +1,97 @@
+@import '../../styles/_base.scss';
+
+.portfolio {
+    h1 {
+        font-size: 24px;
+        color: $primary-text-color;
+        background-color: #fff;
+        height: 72px;
+        line-height: 72px;
+        padding: 0 48px;
+    }
+
+    &__page {
+        padding: 48px;
+        background-color: #FAFAFA;
+
+        .search-plan {
+            max-width: 350px;
+            @include base-input;
+
+            input {
+                background-color: #FAFAFA;
+
+                &::placeholder {
+                    font-size: $base-font-size;
+                    color: #A0AEC0;
+                }
+            }
+
+            .ant-input-wrapper {
+                line-height: 32px;
+
+                .ant-input-affix-wrapper {
+                    border: none;
+                    background-color: #FAFAFA;
+
+                }
+            }
+
+
+            .prefix-search {
+                background-color: #FAFAFA;
+            }
+
+            .ant-input-prefix {
+                background-color: #FAFAFA;
+            }
+
+            .ant-input-group-addon {
+                .ant-btn {
+                    color: $primary-color;
+                    font-size: $base-font-size;
+
+                    span {
+                        font-weight: 700;
+                    }
+
+                    &:hover {
+                        color: #fff;
+                    }
+                }
+            }
+        }
+
+        .cell-user-info {
+            p {
+                @include base-text;
+                font-weight: 600;
+            }
+
+            label {
+                font-size: 12px;
+                font-weight: 500;
+                color: #718096;
+            }
+        }
+
+        &--content {
+            border-radius: 16px;
+            background-color: #fff;
+
+            .header {
+                padding: 21px 24px;
+                border-radius: 16px;
+            }
+        }
+    }
+}
+
+
+@media screen and (max-width: 768px) {
+    .portfolio {
+        &__page {
+            padding: 0 10px;
+        }
+    }
+}

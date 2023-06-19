@@ -1,0 +1,26 @@
+@import '../../styles/_base.scss';
+
+.formilk {
+    width: 100%;
+    max-width: 450px;
+
+    .input-holder {
+        margin-bottom: 24px;
+
+        input {
+            @include base-input
+        }
+
+        .error-message {
+            font-size: 12px;
+            color: red;
+        }
+    }
+
+    .submit-btn {
+        background-color: $primary-color;
+        padding: 16px;
+        font-size: $base-font-size;
+        font-weight: 700;
+    }
+}

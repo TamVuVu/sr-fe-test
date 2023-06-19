@@ -1,0 +1,76 @@
+// @use './styles/base';
+
+@import './styles/_base.scss';
+
+.primary-color {
+    color: $primary-color
+}
+
+.primary-background {
+    background-color: $primary-color
+}
+
+body {
+    font-family: 'General Sans', 'Arial Narrow', Arial, sans-serif;
+    font-size: 16px !important;
+    color: $primary-text-color;
+
+    header {
+        max-width: 1400px;
+        margin: 0 auto;
+    }
+
+    button[role="switch"] {
+        background: #EEEFF2;
+    }
+
+    button[role="switch"][aria-checked="true"] {
+        background: $primary-color;
+    }
+
+    .content {
+        margin: 0 auto;
+        background-color: #fff;
+
+        .user {
+            top: 12px;
+            right: 48px;
+            height: 48px;
+
+            &__avatar {
+                padding: 12px;
+                color: #fff;
+                background-color: $primary-color;
+                border-radius: 50%;
+                font-size: 16px;
+                font-weight: 800;
+                width: 48px;
+            }
+
+            &__info {
+                &--name {
+                    color: $primary-text-color;
+                    font-size: $base-font-size;
+                }
+
+                &--id {
+                    font-size: 12px;
+                    color: #718096;
+                }
+            }
+
+        }
+    }
+
+    .descript {
+        font-size: 12px;
+    }
+
+
+
+    @media screen and (max-width: 576px) {
+        .content {
+            padding: 0 10px;
+        }
+    }
+}

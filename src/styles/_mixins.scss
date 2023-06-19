@@ -1,0 +1,19 @@
+@mixin base-input {
+    color: $primary-text-color !important;
+    padding: 16px !important;
+    font-size: $base-font-size !important;
+    background-color: #FAFAFA !important;
+    border-radius: 12px;
+    font-weight: 500;
+
+    &::placeholder {
+        font-weight: 500;
+        color: #A0AEC0 !important;
+        font-size: $base-font-size !important;
+    }
+}
+
+@mixin base-text {
+    font-size: 16px;
+    color: $primary-text-color;
+}

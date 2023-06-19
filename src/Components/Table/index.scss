@@ -1,0 +1,22 @@
+@import '../../styles/base';
+
+
+
+.ant-pagination {
+    .ant-pagination-item {
+        border: none;
+        font-size: 14px;
+
+        a {
+            color: #A0AEC0;
+        }
+    }
+
+    .ant-pagination-item-active {
+        background-color: #E7F7EF;
+
+        a {
+            color: $primary-color;
+        }
+    }
+}

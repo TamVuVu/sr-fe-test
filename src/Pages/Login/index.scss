@@ -1,0 +1,12 @@
+@import '../../styles/base';
+
+.login-page {
+    display: flex;
+    align-items: center;
+    height: 100vh;
+
+    &__title {
+        color: $primary-text-color;
+        font-size: 36px;
+    }
+}

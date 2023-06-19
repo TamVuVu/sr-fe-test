@@ -1,0 +1,32 @@
+@import '../../styles/base';
+
+.nav-bar-vertical {
+    padding: 25px 0;
+    width: 256px;
+
+    .ant-menu-item {
+        span {
+            color: $primary-text-color !important;
+        }
+
+        .ant-menu-title-content {
+            a {
+                @include base-text;
+                font-weight: 500
+            }
+        }
+    }
+
+    .ant-menu-item-selected {
+        span {
+            color: $primary-color !important;
+        }
+
+        .ant-menu-title-content {
+            a {
+                color: $primary-color;
+            }
+        }
+    }
+
+}
