@@ -156,7 +156,6 @@ export const StepDrawer = ({
                   btnType="success"
                   onClick={() => {
                     handleSubmit();
-                    message.success("Processing complete!");
                   }}
                 >
                   Confirm And Save
@@ -298,7 +297,7 @@ export const StepDrawer = ({
             </form>
             {current === steps.length - 1 && (
               <div className="summary">
-                <div></div>
+                <div>{JSON.stringify(values)}</div>
               </div>
             )}
           </div>
