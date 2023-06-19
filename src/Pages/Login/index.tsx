@@ -1,15 +1,6 @@
-import { useState } from "react";
 import { LoginForm } from "../../Components";
-import { NotificationType } from "../../constant";
-import { notification } from "antd";
-import {
-  FilterOptions,
-  IResponseMoviesSuccess,
-  IResponseError,
-} from "../../types";
-
+import { Navigate } from "react-router-dom";
 import "./index.scss";
-import { Navigate, useNavigate } from "react-router-dom";
 
 export const Login = () => {
   const userInfo = localStorage.getItem("USER_INFO");

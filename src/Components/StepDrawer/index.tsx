@@ -38,7 +38,6 @@ export const StepDrawer = ({
   const prev = () => {
     setCurrent(current - 1);
   };
-  const navigate = useNavigate();
   const steps = [
     {
       title: "Step 1: Set up your fund",
