@@ -1,5 +1,4 @@
-FreeC guideline
+Guideline
 
 1. npm install
-2. Go to .env and add replace your api key
-3. npm start
+2. npm start
