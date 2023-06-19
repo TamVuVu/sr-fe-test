@@ -1,11 +1,9 @@
 import { Drawer, DrawerProps, Input, Typography, message } from "antd";
-import { useNavigate } from "react-router-dom";
-
-import "./index.scss";
 import { Field, Formik } from "formik";
 import { Button } from "../Button";
 import { useState } from "react";
 import { apiCreatePlan } from "../../Api";
+import "./index.scss";
 
 type StepDrawerPropsType = DrawerProps & {
   className?: string;
