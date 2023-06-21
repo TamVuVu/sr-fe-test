@@ -1,9 +1,9 @@
 import apiService from "../App/apiService";
-import { Error, IResponseError } from "../types";
+import { Error, IPlan, IResponseError } from "../types";
 
 export const apiGetPlans = async (
   path: string
-): Promise<any | IResponseError> => {
+): Promise<IPlan[] | IResponseError> => {
   try {
     const plans = (await apiService.get(path))?.data;
     return plans;
@@ -19,7 +19,7 @@ export const apiGetPlans = async (
 export const apiCreatePlan = async (
   path: string,
   payload: any
-): Promise<any | IResponseError> => {
+): Promise<IPlan[] | IResponseError> => {
   try {
     const plan = (await apiService.post(path, payload))?.data;
     return plan;

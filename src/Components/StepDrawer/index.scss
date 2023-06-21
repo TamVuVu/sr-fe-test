@@ -16,6 +16,7 @@
     .ant-drawer-body {
         display: flex;
         justify-content: center;
+        min-height: 460px;
 
         .step-drawer-form {
             width: 100%;
@@ -31,6 +32,18 @@
                 margin-bottom: 24px;
                 width: 100%;
                 max-width: 323px;
+
+                .ant-input-affix-wrapper {
+                    padding: 0;
+                    padding-left: 5px;
+                    background-color: #FAFAFA;
+                    border: none;
+                    line-height: unset;
+
+                    .ant-input-prefix {
+                        font-weight: 500
+                    }
+                }
 
                 p {
                     @include base-text;
@@ -49,6 +62,55 @@
                 select {
                     @include base-input;
                     width: 100%
+                }
+            }
+
+            .summary {
+                border-radius: 16px;
+                width: 100%;
+                max-width: 500px;
+                box-shadow: 0px 3px 4px rgba(153, 155, 168, 0.25);
+
+                &__banner {
+                    border-radius: 16px;
+                    height: 205px;
+                    background: linear-gradient(100.6deg, #009D8A 2.15%, #000513 96.19%);
+
+                    &--title {
+                        border-bottom: 1px solid rgba(207, 219, 213, 0.15);
+
+                        h4 {
+                            padding: 20px 24px;
+                            color: #fff;
+                            font-size: 20px;
+                            font-weight: 800;
+                        }
+                    }
+
+
+                    .plan-name {
+                        color: #E7F7EF;
+                        font-size: 40px;
+                        font-weight: 800;
+                    }
+
+                    p {
+                        color: rgba(255, 255, 255, 0.46)
+                    }
+                }
+
+                &__content {
+                    padding: 26px 24px;
+
+                    .plan-details-label {
+                        font-size: 12px;
+                        color: #747A80;
+                        font-weight: 500;
+                    }
+
+                    .plan-details-value {
+                        font-size: 14px;
+                    }
                 }
             }
         }

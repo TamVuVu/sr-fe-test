@@ -5,6 +5,8 @@
     background-color: #FAFAFA !important;
     border-radius: 12px;
     font-weight: 500;
+    line-height: unset;
+    border: none;
 
     &::placeholder {
         font-weight: 500;

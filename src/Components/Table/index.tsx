@@ -1,25 +1,9 @@
 import React from "react";
 import { TableProps, Table as AntdTable } from "antd";
-
+import { IPlan } from "../../types";
 import "./index.scss";
 
-export interface DataType {
-  key: React.Key;
-  name: string;
-  account_type: string;
-  status: string;
-  budget: number;
-  current_profit: number;
-  profit: number;
-  take_profit: number;
-  stop_loss: number;
-  is_endtarget: boolean;
-  is_ongoing: boolean;
-  is_pause: boolean;
-  base_amount: number;
-}
-
-export type TablePropsType = TableProps<DataType> & {
+export type TablePropsType = TableProps<IPlan> & {
   data: any;
   onTableChange: (pagination: any) => any;
 };
@@ -29,7 +13,7 @@ export const Table = ({
   onTableChange,
   ...props
 }: TablePropsType) => {
-  const onChange: TableProps<DataType>["onChange"] = (
+  const onChange: TableProps<IPlan>["onChange"] = (
     pagination,
     filters,
     sorter,
@@ -43,7 +27,7 @@ export const Table = ({
     <AntdTable
       {...props}
       columns={columns}
-      dataSource={data && data}
+      dataSource={data.map((item: any) => ({ ...item, key: item.id }))}
       onChange={onChange}
       pagination={{ total: 100 }}
     />

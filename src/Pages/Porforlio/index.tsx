@@ -1,16 +1,11 @@
 import { useEffect, useState } from "react";
-import { DataType, StepDrawer, Table } from "../../Components";
+import { Button, StepDrawer, Table } from "../../Components";
 import { MOCK_USER_INFO, PLAN_STATUS_DISPLAY } from "../../constant";
 import { apiGetPlans } from "../../Api";
 import { Input, Tag, Switch, Popover, List, message } from "antd";
-import {
-  FilterOptions,
-  IResponseMoviesSuccess,
-  IResponseError,
-} from "../../types";
+import { FilterOptions, IResponseError, IPlan } from "../../types";
 import { appendApiKey } from "../../utils";
 import { EllipsisOutlined, SearchOutlined } from "@ant-design/icons";
-import { Button } from "../../Components/Button";
 import { ColumnsType, TablePaginationConfig } from "antd/es/table";
 import moment from "moment";
 import "./index.scss";
@@ -25,9 +20,7 @@ const popupList = [
 ];
 
 export const Portfolio = () => {
-  const [plans, setPlans] = useState<IResponseMoviesSuccess | IResponseError>(
-    [] as any
-  );
+  const [plans, setPlans] = useState<IPlan[] | IResponseError>([]);
   const [filterOptions, setFilterOptions] = useState<FilterOptions>({
     page: "1",
     limit: "10",
@@ -49,7 +42,7 @@ export const Portfolio = () => {
     } else return PLAN_STATUS_DISPLAY.stoploss;
   };
 
-  const columns: ColumnsType<DataType> = [
+  const columns: ColumnsType<IPlan> = [
     {
       title: "Plan Name",
       sorter: (a, b) => a.name.length - b.name.length,
@@ -89,13 +82,13 @@ export const Portfolio = () => {
       title: "Invested",
       dataIndex: "budget",
       defaultSortOrder: "descend",
-      sorter: (a, b) => a.budget - b.budget,
+      sorter: (a, b) => Number(a.budget) - Number(b.budget),
       render: (value) => `$${value}`,
     },
     {
       title: "PnL",
       dataIndex: "profit",
-      sorter: (a, b) => a.profit - b.profit,
+      sorter: (a, b) => Number(a.profit) - Number(b.profit),
       render: (value) => {
         let color = "#111827";
         if (Number(value) > 0) {
@@ -171,12 +164,12 @@ export const Portfolio = () => {
     const getPlans = async () => {
       setIsLoading(true);
       const filterParams = new URLSearchParams(filterOptions).toString();
-      const result = await apiGetPlans(
+      const plans = await apiGetPlans(
         appendApiKey("/api/v1/plan", `?${filterParams}`)
       );
-      if (result?.Response === "False") {
-        message.error(result?.Error);
-      } else setPlans(result);
+      if ("Response" in plans) {
+        message.error(plans?.Error);
+      } else setPlans(plans);
       setIsLoading(false);
     };
 

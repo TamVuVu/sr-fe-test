@@ -5,6 +5,7 @@ import { USER_INFO, VALID_USER } from "../../constant";
 import "./index.scss";
 import { Formik } from "formik";
 import { Button } from "../Button";
+import { loginSchema } from "../../utils/validations";
 
 type FormPropsType = {
   className?: string;
@@ -13,7 +14,6 @@ type FormPropsType = {
 
 export const LoginForm = ({ onSubmit, className }: FormPropsType) => {
   const navigate = useNavigate();
-
   return (
     <Formik
       initialValues={{ email: "", password: "" }}
@@ -33,9 +33,10 @@ export const LoginForm = ({ onSubmit, className }: FormPropsType) => {
         }
         return errors;
       }}
+      validationSchema={loginSchema}
       onSubmit={(values, { setSubmitting }) => {
         if (
-          values.email === VALID_USER.userName &&
+          values.email === VALID_USER.email &&
           values.password === VALID_USER.password
         )
           setTimeout(() => {
