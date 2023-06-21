@@ -87,9 +87,17 @@
     }
 }
 
+.ant-popover-content {
+    width: 213px;
+    color: #718096;
+    font-size: 12px;
+    font-weight: 500;
+}
 
 @media screen and (max-width: 768px) {
     .portfolio {
+        padding-top: 50px;
+
         &__page {
             padding: 0 10px;
         }

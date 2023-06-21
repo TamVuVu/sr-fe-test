@@ -40,7 +40,6 @@ export const LoginForm = ({ onSubmit, className }: FormPropsType) => {
           values.password === VALID_USER.password
         )
           setTimeout(() => {
-            message.success("Login Successfully");
             setSubmitting(false);
             localStorage.setItem(
               USER_INFO,
@@ -50,6 +49,7 @@ export const LoginForm = ({ onSubmit, className }: FormPropsType) => {
                 userName: "Robert Chen",
               })
             );
+            message.success("Login Successfully");
             navigate("/");
           }, 400);
         else {

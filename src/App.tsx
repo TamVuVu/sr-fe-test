@@ -3,6 +3,7 @@ import { Navigate, Outlet, useNavigate } from "react-router-dom";
 import Layout from "antd/es/layout/layout";
 import { NavBar } from "./Components";
 import { Dropdown } from "antd";
+import { USER_INFO } from "./constant";
 export const LoadingContext = createContext({
   isLoading: false,
   setIsLoading: (loadingState: boolean) => {},
@@ -11,7 +12,7 @@ export const LoadingContext = createContext({
 function App() {
   const navigate = useNavigate();
   const signOut = () => {
-    localStorage.removeItem("USER_INFO");
+    localStorage.removeItem(USER_INFO);
     navigate("/login");
   };
   const items = [

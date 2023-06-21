@@ -1,4 +1,3 @@
-import React from "react";
 import { TableProps, Table as AntdTable } from "antd";
 import { IPlan } from "../../types";
 import "./index.scss";
@@ -13,13 +12,7 @@ export const Table = ({
   onTableChange,
   ...props
 }: TablePropsType) => {
-  const onChange: TableProps<IPlan>["onChange"] = (
-    pagination,
-    filters,
-    sorter,
-    extra
-  ) => {
-    console.log("params", pagination, filters, sorter, extra);
+  const onChange: TableProps<IPlan>["onChange"] = (pagination) => {
     onTableChange(pagination);
   };
 

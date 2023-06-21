@@ -12,11 +12,11 @@ import "./index.scss";
 
 const { Search } = Input;
 const popupList = [
-  "Edit Plan",
-  "Send Plan",
-  "Copy Plan To Live",
-  "Delete Plan",
-  "View Details",
+  { label: "Edit Plan", icon: <SearchOutlined /> },
+  { label: "Send Plan", icon: <SearchOutlined /> },
+  { label: "Copy Plan To Live", icon: <SearchOutlined /> },
+  { label: "Delete Plan", icon: <SearchOutlined /> },
+  { label: "View Details", icon: <SearchOutlined /> },
 ];
 
 export const Portfolio = () => {
@@ -45,8 +45,9 @@ export const Portfolio = () => {
   const columns: ColumnsType<IPlan> = [
     {
       title: "Plan Name",
+      // dataIndex: "name",
       sorter: (a, b) => a.name.length - b.name.length,
-      sortDirections: ["descend"],
+      // sortDirections: ["descend"],
       render: (value, _record, index) => {
         const planStatusDisplay = getUserDisplay(
           value.is_endtarget,
@@ -68,7 +69,7 @@ export const Portfolio = () => {
     },
     {
       sorter: (a, b) => a.name.length - b.name.length,
-      sortDirections: ["descend"],
+      // sortDirections: ["descend"],
       render: (value, _record, index) => (
         <div className="cell-user-info">
           <p>{MOCK_USER_INFO[index % 5].userName}</p>
@@ -81,7 +82,7 @@ export const Portfolio = () => {
     {
       title: "Invested",
       dataIndex: "budget",
-      defaultSortOrder: "descend",
+      // defaultSortOrder: "descend",
       sorter: (a, b) => Number(a.budget) - Number(b.budget),
       render: (value) => `$${value}`,
     },
@@ -133,10 +134,18 @@ export const Portfolio = () => {
             placement="bottomRight"
             content={
               <List
+                className="popup-list"
                 size="small"
-                bordered
                 dataSource={popupList}
-                renderItem={(item) => <List.Item>{item}</List.Item>}
+                renderItem={(item) => (
+                  <List.Item
+                    onClick={() => alert(value.id)}
+                    style={{ color: "#718096", cursor: "pointer" }}
+                  >
+                    {item.icon}
+                    <span>{item.label}</span>
+                  </List.Item>
+                )}
               />
             }
             trigger="click"
